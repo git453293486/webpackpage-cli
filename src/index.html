@@ -6,13 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body id="app">
+<body >
+
+<div id="app">
     #include('./components/header.html')
-    
-    <img src="./images/123123.jpg" style="width:300px;height: auto;" alt="">
-    {{message}}
-    <div>
-        as1d2asdasdsad3as1d23as1d23as1d23
+    <ul id="partial-view">
+        <li>
+          <img style="width:500px;height:500px;" src="./images/123123.jpg" />
+        </li>
+        <li>
+          <img style="width:500px;height:500px;" src="./images/123123.jpg" />
+        </li>
+        <li>
+          <img style="width:500px;height:500px;" src="./images/123123.jpg" />
+        </li>
+    </ul>
+
+
+    <img @click="asd" src="./images/123123.jpg" style="width:300px;height: auto;" alt="">
+    {{mess}}
+    <button>第一个</button>
+    <button>第二个</button>
+    <div class="sowingmap">
+        <div class="swiperimg">
+            <div style="width:500px;height:500px;" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/123123.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./images/123123.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./images/123123.jpg" alt=""></div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
     </div>
+</div>
 </body>
 </html>

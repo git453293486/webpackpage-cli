@@ -44,11 +44,13 @@ module.exports = {
         new webpack.ProvidePlugin({//jquery全局设定
             $: "jquery",
             jQuery: "jquery",
-            'window.jQuery': "jquery"
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
         }),
     ].concat(html),
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
                 exclude: /\/node_modules/,
                 use: {
@@ -105,6 +107,7 @@ module.exports = {
                     }
                 }]
             },
+            
         ]
     },
     optimization: {//js代码分离
@@ -119,5 +122,10 @@ module.exports = {
         publicPath: '/',
         contentBase: './',
         hot: false
+    },
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.js',
+        }
     },
 };
