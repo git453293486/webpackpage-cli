@@ -18,7 +18,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
-    "copy-webpack-plugin": "^4.5.3",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.0",
     "exports-loader": "^0.7.0",
     "expose-loader": "^0.7.5",
@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "html-withimg-loader": "^0.1.16",
+    "layui-layer": "^1.0.9",
     "swiper": "^4.4.2",
     "vue": "^2.5.17"
   }

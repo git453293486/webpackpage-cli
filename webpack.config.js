@@ -1,7 +1,7 @@
 const path = require('path');//引入node中的path模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 const jquery = require('jquery');
 
@@ -11,13 +11,13 @@ const glob = require('glob')
 const HTMLReg = /([^<>/\\\|:""\*\?]+)\.\w+$/ //匹配文件名
 const JSReg = /([^<>/\\\|:""\*\?]+)\.\w+$/
 
-const entries = glob.sync('src/js/*.js').reduce((prev, next) => { //对多入口进行自动化配置
+const entries = glob.sync('src/!(assets)/*.js').reduce((prev, next) => { //对多入口进行自动化配置
     let name = next.match(JSReg)[1] //正则匹配
     prev[name] = './' + next 
     return prev 
 }, {})
 
-const html = glob.sync('src/*.html').map(path => { //对多文件进行自动化配置
+const html = glob.sync('src/!(assets)/*.html').map(path => { //对多文件进行自动化配置
     let name = path.match(HTMLReg)[1]; // 从路径中提取出文件名
     return new HtmlWebpackPlugin({ 
         template: path, 
@@ -47,14 +47,20 @@ module.exports = {
             'window.jQuery': 'jquery',
             'window.$': 'jquery',
         }),
+        // new CopyWebpackPlugin([
+        //     { from: 'static', to: 'static'}
+        // ])
+
     ].concat(html),
     module: {
         rules: [
-            {
+            {//webpack4版本
                 test: /\.js$/,
-                exclude: /\/node_modules/,
-                use: {
-                    loader: 'babel-loader'
+                loader: 'babel-loader',
+                exclude: __dirname + 'node_modules',
+                include: __dirname + 'src',
+                options: {
+                    presets: ['env']
                 }
             },
             {

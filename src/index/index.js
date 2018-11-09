@@ -1,4 +1,9 @@
-import css from '../js/plugin/bootstrap-3.3.7/css/bootstrap.css'
+
+import '../assets/css/webset.scss';
+
+import layer from 'layui-layer';
+
+import '../assets/js/custom.js'
 
 // import Vue from 'vue';
 // import Swipercss from '../js/plugin/swiper/swiper.min.css'
@@ -23,7 +28,6 @@ import css from '../js/plugin/bootstrap-3.3.7/css/bootstrap.css'
 //     return x * y;
 // };
 // var ap = x => x+1;
-
 // alert(ap(1));
 
 
@@ -34,9 +38,9 @@ import css from '../js/plugin/bootstrap-3.3.7/css/bootstrap.css'
 
 
 
-import {m,square,add} from  './public/public.js'
-console.log(square(111));
-console.log(add (2, 5))
+// import {m,square,add} from  './public/public.js'
+// console.log(square(111));
+// console.log(add (2, 5))
 // alert(m);
 
 
