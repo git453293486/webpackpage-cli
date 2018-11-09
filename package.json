@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "html-withimg-loader": "^0.1.16",
-    "swiper": "^4.4.1",
+    "swiper": "^4.4.2",
     "vue": "^2.5.17"
   }
 }

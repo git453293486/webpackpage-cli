@@ -123,7 +123,7 @@ module.exports = {
         contentBase: './',
         hot: false
     },
-    resolve: {
+    resolve: {//因为默认指向common 需要整个重新定向
         alias: {
             'vue': 'vue/dist/vue.js',
         }
